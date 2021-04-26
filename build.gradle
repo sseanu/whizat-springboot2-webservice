@@ -22,6 +22,7 @@ apply plugin: 'io.spring.dependency-management' // 스프링 부트의 의존성
 
 group 'com.whizat.study'
 version '1.0-SNAPSHOT'
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -30,12 +31,7 @@ repositories {
 // 프로젝트 개발에 필요한 의존성 선언
 // 버전을 명시하지 않아야 맨위의 "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}" 의 버전을 따라감
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
     testCompile('org.springframework.boot:spring-boot-starter-test')
-}
-
-test {
-    useJUnitPlatform()
 }
